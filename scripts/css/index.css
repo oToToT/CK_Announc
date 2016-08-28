@@ -1,0 +1,245 @@
+* {
+    margin: 0;
+    font-family: 微軟正黑體, msjh, auto;
+}
+body {
+    background-color: rgb(229, 214, 175);
+    height: 100%;
+}
+.ib {
+    display: inline-block;
+    vertical-align: top;
+}
+.dropdown {
+    width: 100%;
+    text-align: right;
+}
+#header {
+    position: fixed;
+    width: 100%;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    background-color: rgb(150, 141, 116);
+    height: 60px;
+}
+#logo {
+    max-height: 50px;
+    max-width: 50px;
+    width: 50px;
+    height: 50px;
+    text-align: left;
+    background-image: url('../../resources/images/logo.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor:pointer;
+}
+.container {
+    padding: 5px 10% 5px 10%;
+}
+#searchBar {
+    padding-left: 10px;
+    width: calc(100% - 120px);
+    ;
+    height: 50px;
+}
+#search {
+    border-radius: 5px;
+    height: calc(100% - 3px);
+    width: calc(100% - 118px);
+    font-size: 2rem;
+    background-color: rgba(255, 255, 255, 0.3);
+    color: white;
+    padding-left: 10px;
+    padding-right: 50px;
+    border: 0;
+    transition: 0.3s;
+}
+#search:focus {
+    outline: 0;
+    background-color: rgb(255, 255, 255);
+    color: black;
+}
+.searchIcon {
+    position: relative;
+    left: -55px;
+    max-height: 50px;
+    max-width: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+    z-index: 2;
+}
+#searchConfig {
+    position: relative;
+    cursor: pointer;
+    left: -55px;
+    background-color: rgb(118, 204, 255);
+    max-width: 50px;
+    max-height: 50px;
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 60px;
+    font-size: 1rem;
+    user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    -webkit-user-select: none;
+    transition: 0.3s;
+}
+#searchConfig:hover {
+    box-shadow: 0 2px 20px 0 rgba(30, 30, 30, 0.16), 0 2px 25px 0 rgba(30, 30, 30, 0.12);
+    background-color: rgb(128, 214, 255);
+}
+#searchConfigBar {
+    position: fixed;
+    width: 100%;
+    top: 60px;
+    opacity: 0;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    background-color: rgb(210, 201, 176);
+    transition: 0.3s;
+    z-index: 2;
+}
+.choice {
+    height: 60px;
+    width: 200px;
+    max-height: 60px;
+    max-width: 200px;
+    cursor: default;
+    margin-bottom: 3px;
+}
+.choiceTitle {
+    font-weight: bold;
+    font-size: 1rem;
+}
+.choose {
+    margin-top: 10px;
+    cursor: pointer;
+    width: calc(100% - 20px);
+    height: calc(50px - 1rem - 5px);
+    border-bottom-width: 1px;
+    border-bottom-color: black;
+    border-bottom-style: solid;
+    vertical-align: bottom;
+    line-height: calc(50px - 1rem - 5px);
+}
+.select {
+    transition: 0.3s;
+    list-style: none;
+    padding: 0;
+    display: none;
+    background-color: white;
+    position: relative;
+    top: calc(-58px + 1rem + 5px);
+    left: -10px;
+    width: calc(100% - 6px);
+    padding: 3px;
+    box-shadow: 0 2px 20px 0 rgba(30, 30, 30, 0.16), 0 2px 25px 0 rgba(30, 30, 30, 0.12);
+    max-height: 400px;
+    overflow-y: auto;
+    z-index: 30;
+}
+.select>li {
+    margin: 2.5px;
+    cursor: pointer;
+    padding: 5px;
+}
+.selected {
+    background-color: rgb(210, 210, 210);
+}
+.curChoice {
+    position: absolute;
+}
+#mydayMe {
+    width: calc(100% - 2rem - 18px);
+    background-color: rgba(210, 210, 210, 0.2);
+    border: 0;
+    border-radius: 5px;
+}
+#mydayMe:focus {
+    outline: 0;
+}
+#main {
+    padding-top: 80px;
+    height: 100%;
+}
+.bar {
+    padding: 5%;
+    width: 80%;
+    max-height: 500px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: white;
+    box-shadow: 0 2px 20px 0 rgba(30, 30, 30, 0.16), 0 2px 25px 0 rgba(30, 30, 30, 0.12);
+}
+.annTitle>a {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: rgb(31, 163, 243);;
+}
+.annTitle>a:hover {
+    text-shadow: 3px 3px 5px rgba(30, 30, 30, 0.2);
+    text-decoration: underline;
+}
+.annTime {
+    float: left;
+    color: rgb(200, 200, 200);
+}
+.annTime>a {
+    color: rgb(200, 200, 200);
+    text-decoration: none;
+    border-bottom: 1px;
+    border-bottom-style: dotted;
+    cursor: default;
+}
+.annTime>a:hover {
+    border-bottom-style: solid;
+}
+.annPost {
+    float: right;
+}
+.annPost>a {
+    text-decoration: none;
+    color: black;
+}
+#loading {
+    position: absolute;
+    top: calc(50% - 100px);
+    left: 0px;
+    width: 100%;
+    text-align: center;
+    z-index: 1;
+}
+#load {
+    text-align: center;
+}
+@font-face {
+    font-family: msjh;
+    src: url('../.././resources/fonts/msjh.ttc') format('truetype');
+}
+@media screen and (min-width: 0px) and(max-width: 800px) {
+    .select{
+        max-height: 180px;
+    }
+    #search {
+        height: calc(100% - 15px);
+        width: calc(100% - 118px);
+    }
+    #searchConfig{
+        width: 45px;
+    }
+}
+@media screen and (min-width: 801px) and(max-width: 1024px) {
+    .select{
+        max-height: 300px;
+    }
+    #search {
+        height: calc(100% - 15px);
+        width: calc(100% - 118px);
+    }
+    #searchConfig{
+        width: 45px;
+    }
+}
