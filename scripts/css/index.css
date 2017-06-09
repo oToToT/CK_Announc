@@ -1,6 +1,6 @@
 * {
     margin: 0;
-    font-family: 微軟正黑體, msjh, auto;
+    font-family: Microsoft JhengHei, 微軟正黑體, msjh, auto;
 }
 body {
     background-color: rgb(229, 214, 175);
@@ -201,8 +201,8 @@ body {
     float: right;
 }
 .annPost>a {
-    text-decoration: none;
-    color: black;
+    text-decoration: dotted;
+    color: #00547d;
 }
 #loading {
     position: absolute;
