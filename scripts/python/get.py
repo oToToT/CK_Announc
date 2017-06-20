@@ -1,3 +1,4 @@
+#! /usr/bin/env python3
 from bs4 import BeautifulSoup
 import requests, sys
 import json as JSON
@@ -17,14 +18,15 @@ if len(sys.argv) == 2:
     opt['time'] = soup.findAll("table")[0].findAll("tr")[2].findAll("td")[0].findAll("font")[0].text
     opt['content'] = soup.findAll("table")[0].findAll("tr")[3].findAll("td")[0].findAll("font")[0].text
     for i in range(4,len(soup.findAll("table")[0].findAll("tr"))):
-        now = soup.findAll("table")[0].findAll("tr")[i].findAll("a")[0]
-        if '網址' in now.text:
-            opt['link'][linkLen] = now['href']
-            linkLen += 1
-        elif '附件' in now.text:
-            opt['attachment'][attachLen] = {}
-            opt['attachment'][attachLen]['name'] = now.text.split("：")[1].split("(大小：")[0][0:-4]
-            opt['attachment'][attachLen]['link'] = now['href']
-            attachLen += 1
+        if soup.findAll("table")[0].findAll("tr")[i].findAll("a") != []:
+            now = soup.findAll("table")[0].findAll("tr")[i].findAll("a")[0]
+            if '網址' in now.text:
+                opt['link'][linkLen] = now['href']
+                linkLen += 1
+            elif '附件' in now.text:
+                opt['attachment'][attachLen] = {}
+                opt['attachment'][attachLen]['name'] = now.text.split("：")[1].split("(大小：")[0][0:-4]
+                opt['attachment'][attachLen]['link'] = now['href']
+                attachLen += 1
     print(JSON.dumps(opt))
             
